@@ -15,6 +15,7 @@ const SignupPage = () => {
                 <div className='signuppage-inner'>
                     <div className='component-signup-wrapper'>
                         <Signup />
+                        
                     </div>
                     <div className='image-container'>
                         <Image

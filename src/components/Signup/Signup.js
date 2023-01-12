@@ -66,6 +66,9 @@ export default function Signup() {
 
                 <div className="w-100 text-center mt-2">
                     Already have an account? <Link to="/login"><span style={{ fontWeight: 'bold' }}>Log In</span></Link>
+                    
+                    <h5 style={{marginTop: '15px', textDecoration: 'underline'}}>Currently, registering new account is only available from <span style={{color: 'red'}}>MOBILE APP</span></h5>
+                    <p>konto testowe: test@test123.pl test123</p>
                 </div>
             </div>
         </>
