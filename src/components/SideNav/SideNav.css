@@ -1,0 +1,35 @@
+.component-sideNav {
+  display: block;
+  position: relative;
+}
+.component-sideNav-inner {
+  display: flex;
+  flex-direction: column;
+}
+.component-sideNav-inner ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.component-sideNav-inner li {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.component-sideNav-inner li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+.component-sideNav-inner li a:hover {
+  box-shadow: 0 5px 0 0 #3F0190;
+}
+.component-sideNav-inner .active {
+  box-shadow: 0 5px 0 0 #3F0190;
+}/*# sourceMappingURL=SideNav.css.map */

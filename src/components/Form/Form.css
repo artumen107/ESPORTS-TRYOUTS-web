@@ -1,0 +1,57 @@
+.form {
+  display: block;
+}
+.form.login-form h1 {
+  font-weight: 700;
+  color: #3F0190;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.form.login-form p {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #545563;
+}
+.form.login-form button.submit {
+  width: 100%;
+  background-color: #3F0190;
+  border: #3F0190;
+}
+.form.login-form .form-group {
+  margin-bottom: 1rem;
+}
+.form.login-form .form-group:last-of-type {
+  margin-bottom: 2rem;
+}
+.form.login-form .form-group .form-label {
+  font-size: 0.8rem;
+  margin-left: 0.1rem;
+}
+.form.signup-form h1 {
+  font-weight: 700;
+  color: #3F0190;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.form.signup-form p {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #545563;
+}
+.form.signup-form button.submit {
+  width: 100%;
+  background-color: #3F0190;
+  border: #3F0190;
+}
+.form.signup-form .form-group {
+  margin-bottom: 1rem;
+}
+.form.signup-form .form-group:last-of-type {
+  margin-bottom: 2rem;
+}
+.form.signup-form .form-group .form-label {
+  font-size: 0.8rem;
+  margin-left: 0.1rem;
+}/*# sourceMappingURL=Form.css.map */

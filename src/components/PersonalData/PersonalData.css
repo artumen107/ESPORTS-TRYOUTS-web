@@ -1,0 +1,70 @@
+.component-personal {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.component-personal-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.personal-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.personal-info-wrapper p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  align-self: flex-start;
+  line-height: 1rem;
+}
+.personal-info-wrapper h2 {
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #3F0190;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 2.5rem;
+  text-align: left;
+  align-self: flex-start;
+}
+.personal-info-wrapper h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  align-self: flex-start;
+  line-height: 1.8rem;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.personal-avatar-wrapper {
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  margin-right: 2%;
+}
+.personal-avatar-wrapper .circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.personal-avatar-wrapper .circular--landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
+}/*# sourceMappingURL=PersonalData.css.map */

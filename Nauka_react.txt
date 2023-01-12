@@ -1,0 +1,222 @@
+Projekt "Todo app", dużo materiału:
+https://youtu.be/Qz7swLxNS0Y?t=2878
+
+0. Poprawna instalacja react z node.js
+https://youtu.be/Qz7swLxNS0Y?t=2503
+
+npm install -g create-react-app
+# oraz tworzenie projektu reactowego w obecnym folderze (zamiast kropki można dać ścieżkę)
+npx create-react-app .
+
+0. Struktura projektu
+src ->                                  
+    assets ->                           #todo
+        img
+        css
+    components ->                       #todo
+        ComponentName
+        ComponentName
+    context ->                          #todo
+        AuthContext.js
+        OtherContext.js
+        __tests__ ->                    #todo
+            AuthContext.js
+            OtherContext.js
+        
+    data ->                             #todo
+        constants.js
+        somedata.json
+    hooks ->                            #todo
+        someHook.js
+        __tests__ ->                    #todo
+            someHook.js
+
+    pages ->                            # components which are only used in one, single place (for example Login or Homepage)
+    utils ->                            # holds utility functions (these with no any side effect [no console.log, no changing variables, no effect or operation on any global item])
+        someUtilityFunction.js          # utility function always takes in some value (x) and it returns some other value (y) directly depending on (x)
+        formatCururency.js              # Math.pow(x,3) <- utility function,   Math.pow(x,3) * Math.random() <- NOT utility function (y doesn't directly depends on input)
+           formatDate.js
+        __tests__ ->                    #todo
+            someUtilityFunction.js
+            formatCururency.js
+            formatDate.js
+
+1. JSX (rozszerzenie składni JavaScriptu)
+- Bierze bardziej czytelny kod i na końcu renderuje kod Reactowy, który jest poniżej.
+- Dzięki temu składnia jest łatwiejsza dla programistów.
+
+// JSX
+return <h1>Hello {title}</h1>
+
+// Kod javascript, który kryje się pod powyższym
+return React.createElement('h1', null, "Hello React")
+
+2. Element nadrzędny
+- Każdy komponent musi posiadać element nadrzędny, np. div, w którym może mieścić więcej elementów
+
+3. Używanie nawiasów po return
+- Żeby móc zapisać czytelny kod w kilku liniach, korzysta się z nawiasów po instrukcji return.
+- W innym wypadku, interpreter po znaku nowej lini da średnik i zakończy instrukcję
+
+4. Tworzenie i mapowanie tablicy
+- Kiedy tworzymy listę, elementy powinny dostać indywidualny, unikalny klucz (key)
+const names = ['Kevin', 'Oscar', 'Pam']
+const namesList = names.map(name => <li>{name}</li>)
+
+5. Instrukcje warunkowe
+- Jeśli wartość showNames będzie równa "true", wyświetli listę wraz ze znacznikami, 
+- a kiedy "false", instrukcja zwróci "Brak imion"
+
+{showNames ? <ul>{namesList}</ul> : Brak imion}
+
+6. Rodzaje komponentów
+- Komponenty stworzone z klasy (wykorzystywane do tworzenia komponentów stanowych [inaczej: stateful] z this.state)
+class Names extends React.Component {
+    render() {
+        const names = ['Kevin', 'Oscar', 'Pam']
+        const namesList = names.map(name => <li>{name}</li>)
+        const showNames = true
+
+        return (
+            <div>
+            {showNames ? <ul>{namesList}</ul> : null}
+            </div>
+        )
+    }
+}
+
+- Komponenty stworzone z funkcji ( wykorzystywane do tworzenia komponentów bezstanowych [inaczej: stateles],
+- czyli najczęściej komponentów, które coś renderują lub zwracają jakąś wartość)
+const Names = function() {      ----> #prostszy zapis: const Names = () =>
+
+    const names = ['Kevin', 'Oscar', 'Pam']
+    const namesList = names.map(name => <li>{name}</li>)
+    const showNames = true
+
+    return (
+        <div>
+            {showNames ? <ul>{namesList}</ul> : null}
+        </div>
+    )
+}
+
+7. Tworzenie funkcji oraz przycisków w komponencie
+- Żeby funkcja potrafiła aktualizować oraz wyświetlać zmienne w czasie rzeczywistym, potrzebny jest stan (state)
+const changeTitle = () => {
+    console.log('changing the title...')
+    title = "Mendi"
+}
+<button onClick={changeTitle}> Change title </button>
+
+8. Stany
+- Stany są używane w komponentach klasowych do wyświetlania zmian w czasie rzeczywistym.
+- Dzięki React Hooks możemy używać stanów również w komponentach funkcyjnych.
+- Przykład, kiedy za pomocą przycisku zmieniamy i wyświetlamy nowy tytuł:
+
+class Headline extends React.Component {
+    state = {
+        title: 'ReactJS'
+    }
+    render() {
+
+        const changeTitle = () => {
+            this.setState({
+                title: 'New title'
+            })
+        }
+
+        return (
+            <div>
+                <h1>Hello {this.state.title}</h1>
+                <Names/>
+                <button onClick={changeTitle}> Change title </button>
+            </div>
+        )
+    }
+}
+
+9. Hooks 
+- Hooki są to funkcje, które pozwalają "zahaczyć się" w mechanizmy stanu i cyklu
+- życia Reacta z komponentów funkcyjnych
+- Poniżej przykład, jak w komponencie funkcyjnym Names wykorzystano Hook do wyświetlania
+- listy za pomocą przycisku w zależności od stanu
+
+const Names = () => {
+
+    #tworzenie hooka, jako specyficznej funkcji z dwoma argumentami
+    #showNameState czyli nasz stan, który potem można zmieniać za pomocą funkcji setShowNameState
+    const [showNameState, setShowNameState] = React.useState(true)
+
+    const names = ['Kevin', 'Oscar', 'Pam']
+    const namesList = names.map(name => <li key={name}>{name}</li>)
+    const showNames = true
+    # funkcja, która zmienia stan na odwrotny (!)
+    const toggleNames = () => setShowNameState(!showNameState)
+    
+    return (
+        <div>
+            {showNameState ? <ul>{namesList}</ul> : null}
+            <button onClick={toggleNames}>Toggle names</button>
+        </div>
+    )
+}
+
+10. Argumenty props i przechowywanie stanu w innym miejscu
+- Props są to argumenty, które mogą być przekazywane z komponentu do komponentu
+- Odwołujemy się do nich poprzez użycie props.nazwaArgumentu
+- Dzięki nim, możemy na przykład trzymać stan w komponencie klasowym i nadal używać go w komponencie funkcyjnym
+- Wartość stanu jest po prostu przekazywana do kolejnego komponentu jako argument
+- Obrazuje to poniższy przykład, gdzie Headline, tworząc komponent Names, przekazuje mu argument
+- w postaci wartości obecnego stanu "showNames"
+const Names = props => {
+
+    const names = ['Kevin', 'Oscar', 'Pam']
+    const namesList = names.map(name => <li key={name}>{name}</li>)
+    const showNames = true
+    
+    
+    return (
+        <div>
+            {props.testParameter ? <ul>{namesList}</ul> : null}
+        </div>
+    )
+}
+
+
+class Headline extends React.Component {
+state = {
+    title: 'ReactJS',
+    showNames: true
+}
+
+toggleNames() {
+    # funkcja w komponencie Headline, która ustawia wartość stanu showNames na jej odwrotność (true -> false)
+    this.setState({showNames : !this.state.showNames})
+} 
+
+render() {
+
+    const changeTitle = () => {
+        this.setState({
+            title: 'New title'
+        })
+    }
+
+    return (
+        <div>
+            <h1>Hello {this.state.title}</h1>
+            <Names testParameter={this.state.showNames}/>
+            <button onClick={changeTitle}> Change title </button>
+            # zbindowanie funkcji toggleNames do funkcji przycisku onClick
+            # gdybyśmy zapisali to w postaci onClick={this.toggleNames}, wyskoczyłby błąd
+            # bo wtedy this odnosiłby się do przycisku, a nie do całego komponentu
+            # jednym sposobem jest zapisanie tego w postaci "this.toggleNames.bind(this)",
+            # czyli zbindowanie do klasy jako obiektu nadrzędnego, a nie przycisku
+            # poniżej wykorzystano drugi sposób, czyli funkcję anonimową, czyli
+            # tak jakbyśmy utworzyli sobie nową funkcję, a jej ciałem jest cała funkcja toggleNames
+            # znajdująca się w komponencie
+            <button onClick={() => this.toggleNames()}>Toggle names</button>
+        </div>
+    )
+}
+}

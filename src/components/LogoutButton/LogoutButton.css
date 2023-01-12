@@ -1,0 +1,14 @@
+.logout-button {
+  background-color: transparent;
+  border-radius: 0;
+}
+.logout-button:hover {
+  background-color: transparent;
+  box-shadow: 0 5px 0 0 #3F0190;
+}
+.logout-button:focus {
+  background-color: transparent;
+}
+.logout-button:active {
+  background-color: transparent;
+}/*# sourceMappingURL=LogoutButton.css.map */

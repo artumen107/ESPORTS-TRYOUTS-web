@@ -1,0 +1,17 @@
+@import '../../assets/css/global.scss';
+
+.logout-button {
+    background-color: transparent;
+    border-radius: 0;
+    &:hover {
+        background-color: transparent;
+        box-shadow: 0 5px 0 0 $defaultPurple;
+    }
+    &:focus {
+        background-color: transparent;
+    }
+
+    &:active {
+        background-color: transparent;
+    }
+}

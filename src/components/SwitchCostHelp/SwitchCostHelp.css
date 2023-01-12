@@ -1,0 +1,62 @@
+.component-sc-help {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.component-sc-help p {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+.component-sc-help-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+.component-sc-help-inner .row-custom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex: 0.5;
+}
+.component-sc-help-inner .row-custom .image-wrapper {
+  flex: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.component-sc-help-inner .row-custom .small-description-wrapper {
+  flex: 0.5;
+  padding: 1%;
+  height: 80%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.component-sc-help-inner .row-custom .small-description-wrapper p {
+  padding: 5%;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  border-radius: 1rem;
+  background-color: rgba(217, 217, 217, 0.35);
+}
+.component-sc-help-inner .description-wrapper {
+  flex: 0.4;
+  background-color: rgba(60, 2, 148, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1%;
+}/*# sourceMappingURL=SwitchCostHelp.css.map */

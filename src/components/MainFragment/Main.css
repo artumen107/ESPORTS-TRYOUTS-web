@@ -1,0 +1,17 @@
+.container-test-essa {
+  width: 100%;
+  height: auto;
+  background-color: gray;
+}
+
+.component-main-fragment {
+  display: block;
+  position: relative;
+  height: 100%;
+  padding-top: 1%;
+}
+.component-main-fragment-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}/*# sourceMappingURL=Main.css.map */

@@ -1,0 +1,85 @@
+@import "../../assets/css/global.scss";
+
+.form {
+    display: block;
+    // login form
+
+    &.login-form {
+        h1 {
+            font-weight: 700;
+            color: $defaultPurple;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #545563;
+        }
+
+        button {
+            &.submit {
+                width: 100%;
+                background-color: $defaultPurple;
+                border: $defaultPurple;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            &:last-of-type {
+            margin-bottom: 2rem;
+            }
+
+            .form-label {
+                font-size: 0.8rem;
+                margin-left: 0.1rem;
+            }
+        }
+
+    }
+
+    // signup form
+
+    &.signup-form {
+        h1 {
+            font-weight: 700;
+            color: $defaultPurple;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #545563;
+        }
+
+        button {
+
+            &.submit {
+                width: 100%;
+                background-color: $defaultPurple;
+                border: $defaultPurple;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            &:last-of-type {
+            margin-bottom: 2rem;
+            }
+
+            .form-label {
+                font-size: 0.8rem;
+                margin-left: 0.1rem;
+            }
+        }
+
+    }
+
+
+}

@@ -1,0 +1,55 @@
+.component-fragmentbar {
+  display: block;
+  position: relative;
+  height: 3rem;
+  padding: 0.3rem;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+.component-fragmentbar-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.task-title {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  margin-left: 2%;
+}
+.task-title h4 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.tasks-icons-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.tasks-icons-menu .icon-container {
+  display: flex;
+  align-items: center;
+  padding: 0 0.4rem 0 0.4rem;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+.tasks-icons-menu .icon-container img {
+  width: 2rem;
+}
+.tasks-icons-menu .icon-container:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=FragmentBar.css.map */
