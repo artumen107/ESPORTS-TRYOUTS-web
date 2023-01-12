@@ -59,7 +59,9 @@ export default function Signup() {
                         <Form.Label>Password Confirmation</Form.Label>
                         <Form.Control type="password" ref={passwordConfirmRef} required placeholder="confirm password" />
                     </Form.Group>
-                    <Button disabled={loading} className="button submit" type="submit">
+                    <Button disabled={loading} className="button submit" 
+                    // type="submit"
+                    >
                         SIGN UP
                     </Button>
                 </Form>
